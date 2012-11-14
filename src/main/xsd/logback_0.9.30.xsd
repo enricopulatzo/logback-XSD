@@ -132,6 +132,7 @@
 
 	<xsd:complexType name="Logger">
 		<xsd:sequence>
+			<xsd:element name="appender-ref" maxOccurs="unbounded" minOccurs="0" type="AppenderRef"/>
 			<xsd:any maxOccurs="unbounded" minOccurs="0"/>
 		</xsd:sequence>
 		<xsd:attribute name="name" type="xsd:string" use="required"/>
