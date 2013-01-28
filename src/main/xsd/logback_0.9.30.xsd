@@ -93,6 +93,7 @@
 		<xsd:attribute name="name" type="xsd:string" use="optional"/>
 		<xsd:attribute name="value" type="xsd:string" use="optional"/>
 		<xsd:attribute name="file" type="xsd:string" use="optional"/>
+		<xsd:attribute name="resource" type="xsd:string" use="optional"/>
 		<xsd:anyAttribute/>
 	</xsd:complexType>
 
