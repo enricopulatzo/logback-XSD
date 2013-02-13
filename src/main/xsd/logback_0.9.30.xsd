@@ -161,7 +161,7 @@
 
 	<xsd:simpleType name="LoggerLevels">
 		<xsd:restriction base="xsd:string">
-			<xsd:pattern value="error|ERROR|warn|WARN|info|INFO|debug|DEBUG|trace|TRACE"/>
+			<xsd:pattern value="off|OFF|error|ERROR|warn|WARN|info|INFO|debug|DEBUG|trace|TRACE"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 </xsd:schema>
