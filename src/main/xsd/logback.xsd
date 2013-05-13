@@ -106,7 +106,7 @@
 			<xsd:element name="prudent" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
 			<xsd:element name="layout" type="Layout" minOccurs="0" maxOccurs="1"/>
 			<xsd:element name="rollingPolicy" type="RollingPolicy" minOccurs="0" maxOccurs="1"/>
-			<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+			<xsd:any processContents="skip" maxOccurs="unbounded" minOccurs="0"/>
 		</xsd:sequence>
 		<xsd:attribute name="name" type="xsd:string" use="required"/>
 		<xsd:attribute name="class" type="xsd:string" use="required"/>
@@ -137,7 +137,8 @@
 			<xsd:any maxOccurs="unbounded" minOccurs="0"/>
 		</xsd:sequence>
 		<xsd:attribute name="name" type="xsd:string" use="required"/>
-		<xsd:attribute name="level" type="LoggerLevels" use="required"/>
+		<xsd:attribute name="level" type="LoggerLevels" use="optional"/>
+		<xsd:attribute name="additivity" type="xsd:boolean" use="optional"/>
 		<xsd:anyAttribute/>
 	</xsd:complexType>
 
@@ -161,7 +162,7 @@
 
 	<xsd:simpleType name="LoggerLevels">
 		<xsd:restriction base="xsd:string">
-			<xsd:pattern value="error|ERROR|warn|WARN|info|INFO|debug|DEBUG|trace|TRACE"/>
+			<xsd:pattern value="off|OFF|error|ERROR|warn|WARN|info|INFO|debug|DEBUG|trace|TRACE"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 </xsd:schema>
