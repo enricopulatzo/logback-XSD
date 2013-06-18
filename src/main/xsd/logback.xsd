@@ -12,7 +12,10 @@
 			<xsd:element name="timestamp" minOccurs="0" maxOccurs="1" type="Timestamp"/>
 			<xsd:element name="if" minOccurs="0" maxOccurs="unbounded" type="If"/>
 			<xsd:element name="property" minOccurs="0" maxOccurs="unbounded" type="Property"/>
-			<xsd:element name="appender" minOccurs="0" maxOccurs="unbounded" type="Appender"/>
+			<xsd:element name="appender" minOccurs="0" maxOccurs="unbounded" type="AppenderWithClass"/>
+			<xsd:element name="consoleAppender" minOccurs="0" maxOccurs="unbounded" type="Appender"/>
+			<xsd:element name="fileAppender" minOccurs="0" maxOccurs="unbounded" type="Appender"/>
+			<xsd:element name="rollingFileAppender" minOccurs="0" maxOccurs="unbounded" type="Appender"/>
 			<xsd:element name="logger" minOccurs="0" maxOccurs="unbounded" type="Logger"/>
 			<xsd:element name="root" minOccurs="0" maxOccurs="1" type="Root"/>
 			<xsd:any maxOccurs="unbounded" minOccurs="0"/>
@@ -109,8 +112,15 @@
 			<xsd:any processContents="skip" maxOccurs="unbounded" minOccurs="0"/>
 		</xsd:sequence>
 		<xsd:attribute name="name" type="xsd:string" use="required"/>
-		<xsd:attribute name="class" type="xsd:string" use="required"/>
 		<xsd:anyAttribute/>
+	</xsd:complexType>
+	
+	<xsd:complexType name="AppenderWithClass">
+		<xsd:complexContent>
+    			<xsd:extension base="Appender">
+				<xsd:attribute name="class" type="xsd:string" use="required"/>
+			</xsd:extension>
+		</xsd:complexContent>
 	</xsd:complexType>
 
 	<xsd:complexType name="Filter">
