@@ -66,6 +66,7 @@
 			<xsd:element name="minIndex" type="xsd:int" minOccurs="0" maxOccurs="1"/>
 			<xsd:element name="maxIndex" type="xsd:int" minOccurs="0" maxOccurs="1"/>
 			<xsd:element name="timeBasedFileNamingAndTriggeringPolicy" type="TriggeringPolicy" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="cleanHistoryOnStart" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
 		</xsd:sequence>
 		<xsd:attribute name="class" type="xsd:string" use="required"/>
 	</xsd:complexType>
@@ -162,7 +163,7 @@
 
 	<xsd:simpleType name="LoggerLevels">
 		<xsd:restriction base="xsd:string">
-			<xsd:pattern value="off|OFF|error|ERROR|warn|WARN|info|INFO|debug|DEBUG|trace|TRACE"/>
+			<xsd:pattern value="off|OFF|all|ALL|inherited|INHERITED|null|NULL|error|ERROR|warn|WARN|info|INFO|debug|DEBUG|trace|TRACE"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 </xsd:schema>
