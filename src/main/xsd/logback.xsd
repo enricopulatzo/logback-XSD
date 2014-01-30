@@ -4,6 +4,7 @@
 
 	<xsd:complexType name="Configuration">
 		<xsd:sequence>
+			<xsd:element name="jmxConfigurator" minOccurs="0" maxOccurs="1" type="JmxConfigurator"/>
 			<xsd:element name="statusListener" minOccurs="0" maxOccurs="unbounded" type="StatusListener"/>
 			<xsd:element name="contextListener" minOccurs="0" maxOccurs="unbounded" type="ContextListener"/>
 			<xsd:element name="include" minOccurs="0" maxOccurs="unbounded" type="Include"/>
@@ -166,4 +167,6 @@
 			<xsd:pattern value="off|OFF|all|ALL|inherited|INHERITED|null|NULL|error|ERROR|warn|WARN|info|INFO|debug|DEBUG|trace|TRACE"/>
 		</xsd:restriction>
 	</xsd:simpleType>
+
+	<xsd:complexType name="JmxConfigurator"/>
 </xsd:schema>
