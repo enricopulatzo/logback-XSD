@@ -15,6 +15,7 @@
 			<xsd:element name="appender" minOccurs="0" maxOccurs="unbounded" type="Appender"/>
 			<xsd:element name="logger" minOccurs="0" maxOccurs="unbounded" type="Logger"/>
 			<xsd:element name="root" minOccurs="0" maxOccurs="1" type="Root"/>
+			<xsd:element name="jmxConfigurator" minOccurs="0" maxOccurs="1" type="JmxConfigurator"/>
 			<xsd:any maxOccurs="unbounded" minOccurs="0"/>
 		</xsd:sequence>
 		<xsd:attribute name="scan" type="xsd:string" use="optional"/>
@@ -166,4 +167,6 @@
 			<xsd:pattern value="off|OFF|all|ALL|inherited|INHERITED|null|NULL|error|ERROR|warn|WARN|info|INFO|debug|DEBUG|trace|TRACE"/>
 		</xsd:restriction>
 	</xsd:simpleType>
+
+	<xsd:complexType name="JmxConfigurator"/>
 </xsd:schema>
