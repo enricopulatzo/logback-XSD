@@ -147,6 +147,7 @@
 		<xsd:sequence>
 			<xsd:element name="pattern" type="xsd:string"/>
 		</xsd:sequence>
+		<xsd:attribute name="class" type="xsd:string" use="optional"/>
 	</xsd:complexType>
 
 	<xsd:complexType name="Root">
