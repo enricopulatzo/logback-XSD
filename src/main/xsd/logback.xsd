@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 	<xsd:element name="configuration" type="Configuration"/>
 	<xsd:element name="included" type="Configuration"/>
@@ -145,9 +146,10 @@
 	</xsd:complexType>
 
 	<xsd:complexType name="Encoder">
-		<xsd:sequence>
-			<xsd:element name="pattern" type="xsd:string"/>
-		</xsd:sequence>
+		<xsd:choice maxOccurs="unbounded">
+			<xsd:element name="pattern" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+			<xsd:element name="charset" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+		</xsd:choice>
 		<xsd:attribute name="class" type="xsd:string" use="optional"/>
 	</xsd:complexType>
 
