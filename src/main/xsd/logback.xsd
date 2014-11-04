@@ -145,9 +145,11 @@
 	</xsd:complexType>
 
 	<xsd:complexType name="Encoder">
-		<xsd:sequence>
+		<xsd:choice maxOccurs="unbounded">
 			<xsd:element name="pattern" type="xsd:string"/>
-		</xsd:sequence>
+			<xsd:element name="immediateFlush" type="xsd:boolean" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="outputPatternAsHeader" type="xsd:boolean" minOccurs="0" maxOccurs="1" />
+		</xsd:choice>
 		<xsd:attribute name="class" type="xsd:string" use="optional"/>
 	</xsd:complexType>
 
