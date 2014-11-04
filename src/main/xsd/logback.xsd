@@ -146,7 +146,8 @@
 
 	<xsd:complexType name="Encoder">
 		<xsd:choice maxOccurs="unbounded">
-			<xsd:element name="pattern" type="xsd:string"/>
+			<xsd:element name="pattern" type="xsd:string" minOccurs="0" minOccurs="1" />
+			<xsd:element name="layout" minOccurs="0" maxOccurs="1" type="Layout" />
 			<xsd:element name="immediateFlush" type="xsd:boolean" minOccurs="0" maxOccurs="1" />
 			<xsd:element name="outputPatternAsHeader" type="xsd:boolean" minOccurs="0" maxOccurs="1" />
 		</xsd:choice>
