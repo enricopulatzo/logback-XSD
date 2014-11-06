@@ -150,6 +150,7 @@
 			<xsd:element name="layout" minOccurs="0" maxOccurs="1" type="Layout" />
 			<xsd:element name="immediateFlush" type="xsd:boolean" minOccurs="0" maxOccurs="1" />
 			<xsd:element name="outputPatternAsHeader" type="xsd:boolean" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="charset" type="xsd:string" minOccurs="0" maxOccurs="1" />
 		</xsd:choice>
 		<xsd:attribute name="class" type="xsd:string" use="optional"/>
 	</xsd:complexType>
