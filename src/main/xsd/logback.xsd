@@ -108,7 +108,9 @@
 			<xsd:element name="prudent" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
 			<xsd:element name="layout" minOccurs="0" maxOccurs="1" type="Layout"/>
 			<xsd:element name="rollingPolicy" minOccurs="0" maxOccurs="1" type="RollingPolicy"/>
-      <xsd:any namespace="##other" processContents="skip" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="connectionSource" minOccurs="0" maxOccurs="1" type="ConnectionSource" />
+			<xsd:element name="triggeringPolicy" minOccurs="0" maxOccurs="1" type="TriggeringPolicy" />
+			<xsd:any namespace="##other" processContents="skip" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:choice>
 		<xsd:attribute name="name" type="xsd:string" use="required"/>
 		<xsd:attribute name="class" type="xsd:string" use="required"/>
@@ -195,4 +197,14 @@
 	</xsd:simpleType>
 
 	<xsd:complexType name="JmxConfigurator"/>
+	
+	<xsd:complexType name="ConnectionSource">
+		<xsd:sequence>
+			<xsd:element name="driverClass" type="xsd:string" />
+			<xsd:element name="url" type="xsd:string" />
+			<xsd:element name="user" type="xsd:string" />
+			<xsd:element name="password" type="xsd:string" />
+		</xsd:sequence>
+		<xsd:attribute name="class" type="xsd:string" use="required" />
+	</xsd:complexType>
 </xsd:schema>
