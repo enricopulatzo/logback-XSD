@@ -41,6 +41,7 @@
 		<xsd:attribute name="file" use="optional" type="xsd:string"/>
 		<xsd:attribute name="resource" use="optional" type="xsd:string"/>
 		<xsd:attribute name="url" use="optional" type="xsd:string"/>
+		<xsd:attribute name="optional" use="optional" type="xsd:boolean"/>
 	</xsd:complexType>
 
 	<xsd:complexType name="Define">
