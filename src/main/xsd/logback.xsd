@@ -142,7 +142,7 @@
 		</xsd:choice>
 		<xsd:attribute name="name" type="xsd:string" use="required"/>
 		<xsd:attribute name="level" type="LoggerLevels" use="optional"/>
-		<xsd:attribute name="additivity" type="xsd:boolean" use="optional"/>
+		<xsd:attribute name="additivity" type="xsd:boolean" default="true" use="optional"/>
 		<xsd:anyAttribute/>
 	</xsd:complexType>
 
