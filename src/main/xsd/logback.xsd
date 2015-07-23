@@ -6,6 +6,7 @@
 		<xsd:choice maxOccurs="unbounded">
 			<xsd:element name="statusListener" minOccurs="0" maxOccurs="unbounded" type="StatusListener"/>
 			<xsd:element name="contextListener" minOccurs="0" maxOccurs="unbounded" type="ContextListener"/>
+      <xsd:element name="conversionRule" minOccurs="0" maxOccurs="unbounded" type="conversionRule"/>
 			<xsd:element name="include" minOccurs="0" maxOccurs="unbounded" type="Include"/>
 			<xsd:element name="contextName" minOccurs="0" maxOccurs="1" type="xsd:string"/>
 			<xsd:element name="define" minOccurs="0" maxOccurs="unbounded" type="Define"/>
@@ -35,6 +36,11 @@
 		</xsd:choice>
 		<xsd:attribute name="class" type="xsd:string"/>
 		<xsd:anyAttribute/>
+	</xsd:complexType>
+
+	<xsd:complexType name="conversionRule">
+		<xsd:attribute name="conversionWord" type="xsd:string"/>
+		<xsd:attribute name="converterClass" type="xsd:string"/>
 	</xsd:complexType>
 
 	<xsd:complexType name="Include">
@@ -102,6 +108,7 @@
 	<xsd:complexType name="Appender">
 		<xsd:choice maxOccurs="unbounded">
 			<xsd:element name="file" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+      <xsd:element name="withJansi" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
 			<xsd:element name="encoder" minOccurs="0" maxOccurs="1" type="Encoder"/>
 			<xsd:element name="filter" minOccurs="0" maxOccurs="1" type="Filter"/>
 			<xsd:element name="append" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
