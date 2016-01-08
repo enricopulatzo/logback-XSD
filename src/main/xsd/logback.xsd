@@ -4,6 +4,7 @@
 
 	<xsd:complexType name="Configuration">
 		<xsd:choice maxOccurs="unbounded">
+			<xsd:element name="shutdownHook" minOccurs="0" maxOccurs="1" type="ShutdownHook"/>
 			<xsd:element name="statusListener" minOccurs="0" maxOccurs="unbounded" type="StatusListener"/>
 			<xsd:element name="contextListener" minOccurs="0" maxOccurs="unbounded" type="ContextListener"/>
 			<xsd:element name="include" minOccurs="0" maxOccurs="unbounded" type="Include"/>
@@ -20,6 +21,12 @@
 		<xsd:attribute name="debug" type="xsd:boolean" use="optional"/>
 		<xsd:attribute name="scan" type="xsd:string" use="optional"/>
 		<xsd:attribute name="scanPeriod" type="xsd:string" use="optional"/>
+		<xsd:anyAttribute/>
+	</xsd:complexType>
+
+	<xsd:complexType name="ShutdownHook">
+		<xsd:attribute name="class" type="xsd:string" use="optional"
+					   default="ch.qos.logback.core.hook.DelayingShutdownHook"/>
 		<xsd:anyAttribute/>
 	</xsd:complexType>
 
@@ -149,6 +156,7 @@
 	<xsd:complexType name="Encoder">
 		<xsd:sequence>
 			<xsd:element name="pattern" type="xsd:string"/>
+			<xsd:element name="immediateFlush" type="xsd:boolean"/>
 		</xsd:sequence>
 		<xsd:attribute name="class" type="xsd:string" use="optional"/>
 	</xsd:complexType>
