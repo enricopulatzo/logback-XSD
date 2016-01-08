@@ -127,6 +127,8 @@
 	<xsd:complexType name="Filter">
 		<xsd:choice maxOccurs="unbounded">
 			<xsd:element name="level" minOccurs="0" maxOccurs="unbounded" type="xsd:string"/>
+			<xsd:element name="OnMatch" minOccurs="0" maxOccurs="unbounded" type="MatchValues"/>
+			<xsd:element name="OnMismatch" minOccurs="0" maxOccurs="unbounded" type="MatchValues"/>
       <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:choice>
 		<xsd:attribute name="class" type="xsd:string" use="optional"/>
@@ -172,6 +174,13 @@
 	<xsd:complexType name="AppenderRef">
 		<xsd:attribute name="ref" type="xsd:string"/>
 	</xsd:complexType>
+
+	<xsd:simpleType name="MatchValues">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="ACCEPT"/>
+			<xsd:enumeration value="DENY" />
+		</xsd:restriction>
+	</xsd:simpleType>
 
 	<xsd:simpleType name="LoggerLevels">
 		<xsd:union>
