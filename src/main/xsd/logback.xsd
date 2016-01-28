@@ -170,14 +170,23 @@
 			<xsd:simpleType>
 				<xsd:restriction base="xsd:string">
 					<xsd:enumeration value="OFF"/>
+					<xsd:enumeration value="off"/>
 					<xsd:enumeration value="ALL"/>
+					<xsd:enumeration value="all"/>
 					<xsd:enumeration value="INHERITED"/>
+					<xsd:enumeration value="inherited"/>
 					<xsd:enumeration value="NULL"/>
+					<xsd:enumeration value="null"/>
 					<xsd:enumeration value="ERROR"/>
+					<xsd:enumeration value="error"/>
 					<xsd:enumeration value="WARN"/>
+					<xsd:enumeration value="warn"/>
 					<xsd:enumeration value="INFO"/>
+					<xsd:enumeration value="info"/>
 					<xsd:enumeration value="DEBUG"/>
+					<xsd:enumeration value="debug"/>
 					<xsd:enumeration value="TRACE"/>
+					<xsd:enumeration value="trace"/>
 				</xsd:restriction>
 			</xsd:simpleType>
 			<xsd:simpleType>
