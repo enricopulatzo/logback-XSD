@@ -147,6 +147,7 @@
 			<xsd:element name="rollingPolicy" minOccurs="0" maxOccurs="1" type="RollingPolicy"/>
 			<xsd:element name="connectionSource" minOccurs="0" maxOccurs="1" type="ConnectionSource"/>
 			<xsd:element name="triggeringPolicy" minOccurs="0" maxOccurs="1" type="TriggeringPolicy"/>
+			<xsd:element name="appender-ref" minOccurs="0" maxOccurs="1" type="AppenderRef"/>
 			<xsd:any namespace="##other" processContents="skip" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:choice>
 		<xsd:attribute name="name" type="xsd:string" use="required"/>
@@ -194,7 +195,6 @@
 	</xsd:complexType>
 
 	<xsd:complexType name="Encoder">
-<<<<<<< HEAD
 		<xsd:choice maxOccurs="unbounded">
 			<xsd:element name="charset" type="xsd:string" minOccurs="0" maxOccurs="1"/>
 			<xsd:element name="immediateFlush" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
@@ -202,12 +202,6 @@
 			<xsd:element name="outputPatternAsHeader" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
 			<xsd:element name="pattern" type="xsd:string" minOccurs="0" maxOccurs="1"/>
 		</xsd:choice>
-=======
-		<xsd:sequence>
-			<xsd:element name="pattern" type="xsd:string"/>
-			<xsd:element name="immediateFlush" type="xsd:boolean"/>
-		</xsd:sequence>
->>>>>>> 3efc1afb7c838ff38d730fa0b0db66b4384b409f
 		<xsd:attribute name="class" type="xsd:string" use="optional"/>
 	</xsd:complexType>
 
