@@ -194,6 +194,7 @@
 	</xsd:complexType>
 
 	<xsd:complexType name="Encoder">
+<<<<<<< HEAD
 		<xsd:choice maxOccurs="unbounded">
 			<xsd:element name="charset" type="xsd:string" minOccurs="0" maxOccurs="1"/>
 			<xsd:element name="immediateFlush" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
@@ -201,6 +202,12 @@
 			<xsd:element name="outputPatternAsHeader" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
 			<xsd:element name="pattern" type="xsd:string" minOccurs="0" maxOccurs="1"/>
 		</xsd:choice>
+=======
+		<xsd:sequence>
+			<xsd:element name="pattern" type="xsd:string"/>
+			<xsd:element name="immediateFlush" type="xsd:boolean"/>
+		</xsd:sequence>
+>>>>>>> 3efc1afb7c838ff38d730fa0b0db66b4384b409f
 		<xsd:attribute name="class" type="xsd:string" use="optional"/>
 	</xsd:complexType>
 
@@ -215,6 +222,13 @@
 	<xsd:complexType name="AppenderRef">
 		<xsd:attribute name="ref" type="xsd:string"/>
 	</xsd:complexType>
+
+	<xsd:simpleType name="MatchValues">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="ACCEPT"/>
+			<xsd:enumeration value="DENY" />
+		</xsd:restriction>
+	</xsd:simpleType>
 
 	<xsd:simpleType name="LoggerLevels">
 		<xsd:union>
