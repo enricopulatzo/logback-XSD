@@ -62,6 +62,11 @@
 		<xsd:anyAttribute/>
 	</xsd:complexType>
 
+	<xsd:complexType name="conversionRule">
+		<xsd:attribute name="conversionWord" type="xsd:string"/>
+		<xsd:attribute name="converterClass" type="xsd:string"/>
+	</xsd:complexType>
+
 	<xsd:complexType name="Include">
 		<xsd:attribute name="optional" use="optional" type="xsd:boolean"/>
 		<xsd:attribute name="file" use="optional" type="xsd:string"/>
