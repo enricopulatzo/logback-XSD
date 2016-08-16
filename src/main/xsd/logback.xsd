@@ -62,13 +62,7 @@
 		<xsd:anyAttribute/>
 	</xsd:complexType>
 
-	<xsd:complexType name="conversionRule">
-		<xsd:attribute name="conversionWord" type="xsd:string"/>
-		<xsd:attribute name="converterClass" type="xsd:string"/>
-	</xsd:complexType>
-
 	<xsd:complexType name="Include">
-		<xsd:attribute name="optional" use="optional" type="xsd:boolean"/>
 		<xsd:attribute name="file" use="optional" type="xsd:string"/>
 		<xsd:attribute name="resource" use="optional" type="xsd:string"/>
 		<xsd:attribute name="url" use="optional" type="xsd:string"/>
@@ -195,7 +189,6 @@
 		<xsd:attribute name="name" type="xsd:string" use="required"/>
 		<xsd:attribute name="level" type="LoggerLevels" use="optional"/>
 		<xsd:attribute name="additivity" type="xsd:boolean" use="optional" default="true"/>
-		<xsd:attribute name="additivity" type="xsd:boolean" default="true" use="optional"/>
 		<xsd:anyAttribute/>
 	</xsd:complexType>
 
@@ -221,13 +214,6 @@
 	<xsd:complexType name="AppenderRef">
 		<xsd:attribute name="ref" type="xsd:string"/>
 	</xsd:complexType>
-
-	<xsd:simpleType name="MatchValues">
-		<xsd:restriction base="xsd:string">
-			<xsd:enumeration value="ACCEPT"/>
-			<xsd:enumeration value="DENY" />
-		</xsd:restriction>
-	</xsd:simpleType>
 
 	<xsd:simpleType name="LoggerLevels">
 		<xsd:union>
