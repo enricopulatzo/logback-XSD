@@ -136,6 +136,7 @@
 
 	<xsd:complexType name="Appender">
 		<xsd:choice maxOccurs="unbounded">
+			<xsd:element name="target" minOccurs="0" maxOccurs="1" type="Targets"/>
 			<xsd:element name="file" minOccurs="0" maxOccurs="1" type="xsd:string"/>
 			<xsd:element name="withJansi" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
 			<xsd:element name="encoder" minOccurs="0" maxOccurs="1" type="Encoder"/>
@@ -153,6 +154,13 @@
 		<xsd:attribute name="class" type="xsd:string" use="required"/>
 		<xsd:anyAttribute/>
 	</xsd:complexType>
+
+	<xsd:simpleType name="Targets">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="System.out"/>
+			<xsd:enumeration value="System.err"/>
+		</xsd:restriction>
+	</xsd:simpleType>
 
 	<xsd:complexType name="Filter">
 		<xsd:choice maxOccurs="unbounded">
