@@ -164,7 +164,7 @@
 
 	<xsd:complexType name="Filter">
 		<xsd:choice maxOccurs="unbounded">
-			<xsd:element name="level" minOccurs="0" maxOccurs="unbounded" type="xsd:string"/>
+			<xsd:element name="level" minOccurs="0" maxOccurs="unbounded" type="LoggerLevel"/>
 			<xsd:element name="onMatch" minOccurs="0" maxOccurs="unbounded" type="MatchValue"/>
 			<xsd:element name="onMismatch" minOccurs="0" maxOccurs="unbounded" type="MatchValue"/>
 			<xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
