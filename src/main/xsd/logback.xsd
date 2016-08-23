@@ -94,13 +94,13 @@
 			<xsd:element name="maxIndex" minOccurs="0" maxOccurs="1" type="xsd:int"/>
 			<xsd:element name="timeBasedFileNamingAndTriggeringPolicy" minOccurs="0" maxOccurs="1" type="TriggeringPolicy"/>
 			<xsd:element name="cleanHistoryOnStart" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
-			<xsd:element name="maxFileSize" minOccurs="0" maxOccurs="1" type="FileSizes"/>
-			<xsd:element name="totalSizeCap" minOccurs="0" maxOccurs="1" type="FileSizes"/>
+			<xsd:element name="maxFileSize" minOccurs="0" maxOccurs="1" type="FileSize"/>
+			<xsd:element name="totalSizeCap" minOccurs="0" maxOccurs="1" type="FileSize"/>
 		</xsd:choice>
 		<xsd:attribute name="class" type="xsd:string" use="required"/>
 	</xsd:complexType>
 
-	<xsd:simpleType name="FileSizes">
+	<xsd:simpleType name="FileSize">
 		<xsd:restriction base="xsd:string">
 			<xsd:pattern value="[1-9][0-9]*(KB|MB|GB)?"/>
 		</xsd:restriction>
@@ -108,7 +108,7 @@
 
 	<xsd:complexType name="TriggeringPolicy">
 		<xsd:sequence>
-			<xsd:element name="maxFileSize" minOccurs="0" maxOccurs="1" type="FileSizes"/>
+			<xsd:element name="maxFileSize" minOccurs="0" maxOccurs="1" type="FileSize"/>
 		</xsd:sequence>
 		<xsd:attribute name="class" type="xsd:string" use="required"/>
 	</xsd:complexType>
@@ -165,15 +165,15 @@
 	<xsd:complexType name="Filter">
 		<xsd:choice maxOccurs="unbounded">
 			<xsd:element name="level" minOccurs="0" maxOccurs="unbounded" type="xsd:string"/>
-			<xsd:element name="onMatch" minOccurs="0" maxOccurs="unbounded" type="MatchValues"/>
-			<xsd:element name="onMismatch" minOccurs="0" maxOccurs="unbounded" type="MatchValues"/>
+			<xsd:element name="onMatch" minOccurs="0" maxOccurs="unbounded" type="MatchValue"/>
+			<xsd:element name="onMismatch" minOccurs="0" maxOccurs="unbounded" type="MatchValue"/>
 			<xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:choice>
 		<xsd:attribute name="class" type="xsd:string" use="optional"/>
 		<xsd:anyAttribute/>
 	</xsd:complexType>
 
-	<xsd:simpleType name="MatchValues">
+	<xsd:simpleType name="MatchValue">
 		<xsd:restriction base="xsd:string">
 			<xsd:enumeration value="ACCEPT"/>
 			<xsd:enumeration value="DENY"/>
@@ -195,7 +195,7 @@
 			<xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:choice>
 		<xsd:attribute name="name" type="xsd:string" use="required"/>
-		<xsd:attribute name="level" type="LoggerLevels" use="optional"/>
+		<xsd:attribute name="level" type="LoggerLevel" use="optional"/>
 		<xsd:attribute name="additivity" type="xsd:boolean" use="optional" default="true"/>
 		<xsd:anyAttribute/>
 	</xsd:complexType>
@@ -215,7 +215,7 @@
 		<xsd:sequence>
 			<xsd:element name="appender-ref" minOccurs="0" maxOccurs="unbounded" type="AppenderRef"/>
 		</xsd:sequence>
-		<xsd:attribute name="level" use="required" type="LoggerLevels"/>
+		<xsd:attribute name="level" use="required" type="LoggerLevel"/>
 		<xsd:anyAttribute/>
 	</xsd:complexType>
 
@@ -223,7 +223,7 @@
 		<xsd:attribute name="ref" type="xsd:string"/>
 	</xsd:complexType>
 
-	<xsd:simpleType name="LoggerLevels">
+	<xsd:simpleType name="LoggerLevel">
 		<xsd:union>
 			<xsd:simpleType>
 				<xsd:restriction base="xsd:string">
