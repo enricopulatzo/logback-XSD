@@ -177,6 +177,7 @@
 		<xsd:restriction base="xsd:string">
 			<xsd:enumeration value="ACCEPT"/>
 			<xsd:enumeration value="DENY"/>
+			<xsd:enumeration value="NEUTRAL"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 
