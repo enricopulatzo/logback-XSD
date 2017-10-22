@@ -19,6 +19,7 @@
 			<xsd:element name="shutdownHook" minOccurs="0" maxOccurs="1" type="ShutdownHook"/>
 			<xsd:element name="statusListener" minOccurs="0" maxOccurs="unbounded" type="StatusListener"/>
 			<xsd:element name="contextListener" minOccurs="0" maxOccurs="unbounded" type="ContextListener"/>
+			<xsd:element name="jmxConfigurator" minOccurs="0" maxOccurs="1" type="JmxConfigurator"/>
 			<xsd:element name="conversionRule" minOccurs="0" maxOccurs="unbounded" type="ConversionRule"/>
 			<xsd:element name="include" minOccurs="0" maxOccurs="unbounded" type="Include"/>
 			<xsd:element name="contextName" minOccurs="0" maxOccurs="1" type="xsd:string"/>
