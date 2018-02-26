@@ -8,11 +8,11 @@ The logback project does not provide an XSD which prevents editors from easily p
 
 A simple usage example:
 ```
-  <?xml version="1.0" encoding="UTF-8"?>
-  <configuration
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration
     xmlns="http://ch.qos.logback/xml/ns/logback"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://ch.qos.logback/xml/ns/logback http://ch.qos.logback/xml/ns/logback/logback.xsd">
+    xsi:schemaLocation="http://ch.qos.logback/xml/ns/logback https://raw.githubusercontent.com/enricopulatzo/logback-XSD/master/src/main/xsd/logback.xsd">
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
       <encoder>
@@ -22,5 +22,5 @@ A simple usage example:
     <root level="WARN">
         <appender-ref ref="STDOUT" />
     </root>
-  </configuration>
+</configuration>
 ```
