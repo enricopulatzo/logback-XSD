@@ -33,7 +33,7 @@
 			<xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:choice>
 		<xsd:attribute name="debug" type="xsd:boolean" use="optional"/>
-		<xsd:attribute name="scan" type="xsd:string" use="optional"/>
+		<xsd:attribute name="scan" type="xsd:boolean" use="optional"/>
 		<xsd:attribute name="scanPeriod" type="xsd:string" use="optional"/>
 		<xsd:attribute name="packagingData" type="xsd:boolean" use="optional"/>
 		<xsd:anyAttribute/>
