@@ -33,9 +33,12 @@
 			<xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:choice>
 		<xsd:attribute name="debug" type="xsd:boolean" use="optional"/>
-		<xsd:attribute name="scan" type="xsd:string" use="optional"/>
-		<xsd:attribute name="scanPeriod" type="xsd:string" use="optional"/>
-		<xsd:attribute name="packagingData" type="xsd:boolean" use="optional"/>
+		<xsd:attribute name="scan" type="xsd:boolean" use="optional"
+					   default="false"/>
+		<xsd:attribute name="scanPeriod" type="xsd:string" use="optional"
+					   default="1 minutes"/>
+		<xsd:attribute name="packagingData" type="xsd:boolean" use="optional"
+					   default="false"/>
 		<xsd:anyAttribute/>
 	</xsd:complexType>
 
@@ -211,7 +214,9 @@
 			<xsd:element name="outputPatternAsHeader" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
 			<xsd:element name="pattern" type="xsd:string" minOccurs="0" maxOccurs="1"/>
 		</xsd:choice>
-		<xsd:attribute name="class" type="xsd:string" use="optional"/>
+		<xsd:attribute name="class" type="xsd:string" use="optional"
+					   default="ch.qos.logback.classic.encoder.PatternLayoutEncoder"
+		/>
 	</xsd:complexType>
 
 	<xsd:complexType name="Root">
