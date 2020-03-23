@@ -33,12 +33,9 @@
 			<xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:choice>
 		<xsd:attribute name="debug" type="xsd:boolean" use="optional"/>
-		<xsd:attribute name="scan" type="xsd:boolean" use="optional"
-					   default="false"/>
-		<xsd:attribute name="scanPeriod" type="xsd:string" use="optional"
-					   default="1 minute"/>
-		<xsd:attribute name="packagingData" type="xsd:boolean" use="optional"
-					   default="false"/>
+		<xsd:attribute name="scan" type="xsd:boolean" use="optional" default="false"/>
+		<xsd:attribute name="scanPeriod" type="xsd:string" use="optional" default="1 minute"/>
+		<xsd:attribute name="packagingData" type="xsd:boolean" use="optional" default="false"/>
 		<xsd:anyAttribute/>
 	</xsd:complexType>
 
@@ -132,6 +129,7 @@
 		<xsd:sequence>
 			<xsd:any minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
+		<xsd:attribute name="scope" type="xsd:string" use="optional"/>
 		<xsd:attribute name="name" type="xsd:string" use="optional"/>
 		<xsd:attribute name="value" type="xsd:string" use="optional"/>
 		<xsd:attribute name="file" type="xsd:string" use="optional"/>
