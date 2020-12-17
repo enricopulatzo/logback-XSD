@@ -30,6 +30,8 @@
 			<xsd:element name="appender" minOccurs="0" maxOccurs="unbounded" type="Appender"/>
 			<xsd:element name="logger" minOccurs="0" maxOccurs="unbounded" type="Logger"/>
 			<xsd:element name="root" minOccurs="0" maxOccurs="1" type="Root"/>
+			<xsd:element name="springProperty" minOccurs="0" maxOccurs="unbounded" type="SpringProperty"/>
+			<xsd:element name="springProfile" minOccurs="0" maxOccurs="unbounded" type="SpringProfile"/>
 			<xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:choice>
 		<xsd:attribute name="debug" type="xsd:boolean" use="optional"/>
@@ -223,6 +225,35 @@
 		</xsd:sequence>
 		<xsd:attribute name="level" use="required" type="LoggerLevel"/>
 		<xsd:anyAttribute/>
+	</xsd:complexType>
+
+	<xsd:complexType name="SpringProperty">
+		<xsd:attribute name="scope" type="xsd:string"/>
+		<xsd:attribute name="name" type="xsd:string" use="required"/>
+		<xsd:attribute name="source" type="xsd:string" use="required"/>
+		<xsd:attribute name="defaultValue" type="xsd:string"/>
+		<xsd:anyAttribute/>
+	</xsd:complexType>
+
+	<xsd:complexType name="SpringProfile">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="shutdownHook" minOccurs="0" maxOccurs="1" type="ShutdownHook"/>
+			<xsd:element name="statusListener" minOccurs="0" maxOccurs="unbounded" type="StatusListener"/>
+			<xsd:element name="contextListener" minOccurs="0" maxOccurs="unbounded" type="ContextListener"/>
+			<xsd:element name="jmxConfigurator" minOccurs="0" maxOccurs="1" type="JmxConfigurator"/>
+			<xsd:element name="conversionRule" minOccurs="0" maxOccurs="unbounded" type="ConversionRule"/>
+			<xsd:element name="include" minOccurs="0" maxOccurs="unbounded" type="Include"/>
+			<xsd:element name="contextName" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+			<xsd:element name="define" minOccurs="0" maxOccurs="unbounded" type="Define"/>
+			<xsd:element name="timestamp" minOccurs="0" maxOccurs="1" type="Timestamp"/>
+			<xsd:element name="if" minOccurs="0" maxOccurs="unbounded" type="If"/>
+			<xsd:element name="property" minOccurs="0" maxOccurs="unbounded" type="Property"/>
+			<xsd:element name="appender" minOccurs="0" maxOccurs="unbounded" type="Appender"/>
+			<xsd:element name="logger" minOccurs="0" maxOccurs="unbounded" type="Logger"/>
+			<xsd:element name="root" minOccurs="0" maxOccurs="1" type="Root"/>
+			<xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:choice>
+		<xsd:attribute name="name" type="xsd:string" use="required"/>
 	</xsd:complexType>
 
 	<xsd:complexType name="AppenderRef">
