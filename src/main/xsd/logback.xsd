@@ -131,7 +131,7 @@
 		<xsd:sequence>
 			<xsd:any minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
-		<xsd:attribute name="scope" type="xsd:string" use="optional"/>
+		<xsd:attribute name="scope" type="Scope" use="optional"/>
 		<xsd:attribute name="name" type="xsd:string" use="optional"/>
 		<xsd:attribute name="value" type="xsd:string" use="optional"/>
 		<xsd:attribute name="file" type="xsd:string" use="optional"/>
@@ -228,7 +228,7 @@
 	</xsd:complexType>
 
 	<xsd:complexType name="SpringProperty">
-		<xsd:attribute name="scope" type="scopeChoice"/>
+		<xsd:attribute name="scope" type="Scope"/>
 		<xsd:attribute name="name" type="xsd:string" use="required"/>
 		<xsd:attribute name="source" type="xsd:string" use="required"/>
 		<xsd:attribute name="defaultValue" type="xsd:string"/>
@@ -260,10 +260,11 @@
 		<xsd:attribute name="ref" type="xsd:string"/>
 	</xsd:complexType>
 
-	<xsd:simpleType name="scopeChoice">
+	<xsd:simpleType name="Scope">
 		<xsd:restriction base="xsd:string">
-			<xsd:enumeration value="context"/>
 			<xsd:enumeration value="local"/>
+			<xsd:enumeration value="context"/>
+			<xsd:enumeration value="system"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 
